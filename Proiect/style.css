@@ -1,0 +1,587 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*Setari globale*/
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  /*Cerceteaza*/
+  outline: none;
+  transition: 0.3s ease;
+}
+button.white {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  /*Cerceteaza*/
+  outline: none;
+  transition: 0.3s ease;
+}
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+.section-p1 {
+  padding: 40px 80px;
+}
+.section-m1 {
+  margin: 40px 0;
+}
+body {
+  width: 100%;
+} /*Partea de bara de navigatie general*/
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 80px;
+  background: #e3e6f3;
+  z-index: 999;
+  /*Umbra x=0 ,y=15px  z =dispersie rgba transparenta*/
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.144);
+  /*Dorim sa facem bara de navigatie nemiscata*/
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+/*La general*/
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+  list-style: none;
+  padding: 0px 20px;
+  /*Smoot changing*/
+  transition: 0.5s ease;
+  /*Pozitie relativa fata de li*/
+  position: relative;
+}
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+#navbar li a:hover,
+/*Home =culoarea turcuaz add o clasa lui home*/
+#navbar li a.active {
+  color: #088178;
+}
+/*Folosim pseudoclase*/
+#navbar li a.active::after,
+/*Iar la celelalte elemente atunci cand trec cu mousul*/
+#navbar li a:hover::after {
+  content: " ";
+  /*Treizeci la suta din latimea lui Home*/
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+/*Bara de navigatie e terminata*/
+
+/**Sectiunea Hero/
+/*Partea din stanga text*/
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+/*Dorim sa adaugam o imagine de fundal la aceasta sectiune*/
+#hero {
+  background-image: url("img/hero4.png");
+  /*Inaltimea sectiunii o da textul in acest moment trebuie sa setam inaltimea si latimea sectiunii*/
+  width: 100%;
+  height: 99vh;
+  /*Propietate foarte importanta*/
+  background-position: top 25% right 0;
+  background-size: cover;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#hero h4 {
+  padding-bottom: 15px;
+}
+#hero h1 {
+  color: #088178;
+}
+#hero button {
+  background-image: url(img/button.png);
+  border: none;
+  /*Butonul vine la pachet cu culoarea alba background*/
+  background-color: transparent;
+  color: #088178;
+  /*Adaugam padding ca sa se vada imaginea din spate*/
+  padding: 14px 80px 14px 65px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+/*ectiunea Hero este gata*/
+
+/*Sectiunea feature*/
+#feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*Propietate foarte interesanta atunci cand nu mai este spatiu pentru obiecte sa treaca pe rand urmator in functie de dimensiunea ecranului astfel obtinem un dwsign responsive*/
+  flex-wrap: wrap;
+}
+#feature .fe-box {
+  border: 1px solid #e7f0e8;
+  /*Stabilim latimea cutiei*/
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.158);
+  border-radius: 4px;
+  transition: 0.5s ease;
+}
+#feature .fe-box:hover {
+  box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.144);
+}
+#feature .fe-box .h6--1 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #fddde4;
+}
+#feature .fe-box .h6--2 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #cdebbc;
+}
+#feature .fe-box .h6--3 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #d1e8f2;
+}
+#feature .fe-box .h6--4 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #cdd4f8;
+}
+#feature .fe-box .h6--5 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #f6dbf6;
+}
+#feature .fe-box .h6--6 {
+  /*Ocupa exact spatiul necesar*/
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  color: #088178;
+  background: #fff2e5;
+}
+/*Numaratoarea se face de la divuri adica h6 de la cutia nr 1,h6 de la cutia nr 2 ,h6 de la cutia numarul3 si asa mai departe*/
+/*#feature.fe-box:nth-child(2) h6 {
+  background: #161a14;
+}*/
+
+#feature .fe-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/*sectiunea feauter e gata*/
+/*Sectiunea produse*/
+#product1 {
+  text-align: center;
+}
+#product1 .pro {
+  width: 23%;
+  min-width: 250px;
+  border: 1px solid rgb(247, 239, 239);
+  padding: 10px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.39);
+  margin: 30px 0;
+  transition: 0.3s ease;
+  position: relative;
+}
+#product1 .pro:hover {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.548);
+}
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+#product1 .pro .description {
+  text-align: start;
+  padding: 10px 0;
+}
+#product1 .pro .description span {
+  color: #606063;
+  font-size: 12px;
+}
+#product1 .pro .description h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+#product1 .pro .description i {
+  font-size: 12px;
+  color: rgb(243, 181, 25);
+}
+#product1 .pro .description h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178;
+}
+#product1 .pro .cartul {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: rgb(245, 222, 222);
+  color: #088178;
+  font-weight: 500;
+  border: 1px solid #cce7d0;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+/*Aliniem produsele in pagina in randuri*/
+#product1 .pro-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+/*Sfarsitul partii produse*/
+/*Inceputul banner*/
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(img/banner/b2.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+#banner h4 {
+  color: #fff;
+  font-size: 16px;
+}
+#banner h2 {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+}
+#banner h2 span {
+  color: #ef3636;
+}
+#banner button:hover {
+  background-color: #088178;
+  color: #fff;
+}
+/*Banner terminat*/
+/*Urmeaza alt set de produse*/
+#sm-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url(img/banner/b17.jpg);
+  /*cercetare min-width*/
+  min-width: 580px;
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  padding: 30px;
+}
+#sm-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+#sm-banner .banner-box h4 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+}
+#sm-banner .banner-box h2 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+#sm-banner .banner-box span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 50px;
+}
+#sm-banner .banner-box:hover button {
+  background-color: #088178;
+  color: white;
+  border: 1px solid #088178;
+}
+#sm-banner .b-2 {
+  background-image: url(img/banner/b10.jpg);
+} /*Sfarsitul banner 2*/
+/*inceput banner3*/
+#banner3 .banner-box3 {
+  background-image: url(img/banner/b7.jpg);
+  background-position: center;
+  background-size: cover;
+  /*Cercetare*/
+  min-width: 30%;
+  height: 30vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+#banner3 h2 {
+  color: white;
+  font-weight: 900;
+  font-size: 22px;
+}
+#banner3 h3 {
+  color: #ec544e;
+  font-weight: 800;
+  font-size: 15px;
+}
+#banner3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+#banner3 .bb-4 {
+  background-image: url(img/banner/b4.jpg);
+}
+#banner3 .bb-5 {
+  background-image: url(img/banner/b18.jpg);
+} /*Sectiunea banner terminata*/
+/*Sectiunea newsletter*/
+#newsletter {
+  background-image: url(img/banner/b14.png);
+  background-color: #041e42;
+}
+.form-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#newsletter .newstext h4 {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+#newsletter .newstext p {
+  color: #3a7772;
+  font-size: 16px;
+  font-weight: 500;
+}
+#newsletter .newstext p span {
+  color: rgb(247, 118, 33);
+}
+#newsletter input {
+  height: 3.125rem;
+  padding: 0 1.25rem;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px 0px 0px 4px;
+  outline: none;
+}
+#newsletter button {
+  background-color: #088178;
+  color: #fff;
+  width: 100px;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+  padding: 0 2px;
+  font-size: 14px;
+  font-weight: bold;
+}
+#newsletter .form {
+  display: flex;
+  justify-content: space-between;
+} /*Sectiune terminata*/
+/*footer*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .col {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+footer .logo {
+  margin-bottom: 30px;
+}
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+footer .follow {
+  margin-top: 20px;
+}
+footer .install .row img {
+  border: 1px solid #088178;
+  border-radius: 6px;
+}
+
+footer .install img {
+  margin: 10px 0 15px 0;
+}
+footer .copyright {
+  width: 100%;
+  text-align: center;
+}
+#mobile {
+  display: none;
+  align-items: center;
+}
+@media (max-width: 799px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #e3e6f3;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 18px 0 0 10px;
+    transition: 0.5s;
+    position: relative;
+  }
+  #navbar.active {
+    right: 0px;
+  }
+  #mobile {
+    display: flex;
+    align-items: center;
+  }
+}
+#navbar li {
+  margin-bottom: 25px;
+}
+
+#mobile i {
+  color: #1a1a1a;
+  padding-left: 20px;
+  font-size: 24px;
+}
+.ix {
+  width: 24px;
+  height: 24px;
+  stroke: #222;
+  position: absolute;
+  top: -13px;
+  left: 23px;
+}
+.sop {
+  display: none;
+}
+.butonel {
+  width: 50px;
+  height: 50px;
+  background-color: orangered;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+.butonela {
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+footer {
+  position: relative;
+}
